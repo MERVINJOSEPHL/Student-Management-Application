@@ -22,7 +22,7 @@ Functionality-the core functions the application perform:
 the average percentage of students in a specified class.
 	2. Calculate Average Marks of a Student: Implement a feature to calculate and
 display the average marks of a specific student.
-8.PROCEDURE:
+8. PROCEDURE:
 	1. An empty page will be displayed with add student link
  	2. To add student detail create a new record
   	3. All the students will be displayed
