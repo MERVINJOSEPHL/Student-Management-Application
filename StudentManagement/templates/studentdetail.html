@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+      <center><h1>Student Details</h1>
+        <a href="/mark/{{ student['student_id'] }}" class="mark"><h1>Marks</h1></a></center>
+      <table id="personal-details">
+        <tr>
+          <th>Student_Id</th>
+          <th>Full Name</th>
+          <th>Age</th>
+          <th>DateOfBirth</th>
+          <th>Class</th>
+          <th>percentage</th>
+          <th>grade</th>
+        </tr>
+        <tr>
+          <td>{{ student["student_id"] }}</td>
+          <td>{{ student["full_name"] }}</td>
+          <td>{{ student["age"] }}</td>
+          <td>{{ student["dateofbirth"] }}</td>
+          <td>{{ student["stuclass"] }}</td>
+          <td>{{ student["percentage"] }}</td>
+          <td>{{ student["grade"] }}</td>
+        </tr>
+      </table>
+      <a href="/" class="go-back">Go Back</a>
+    </body>
+  </html>

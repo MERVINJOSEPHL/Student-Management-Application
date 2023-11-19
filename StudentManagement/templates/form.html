@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Student</title>
+</head>
+  <body>
+    <form action="/form" method="POST" id="create-form">
+      <div>
+        <label>student id:</label>
+        <input type="text" name="sid" required />
+      </div>
+      <div>
+        <label>Name:</label>
+        <input type="text" name="name" required />
+      </div>
+      <div>
+        <label>Age:</label>
+        <input type="text" name="age" />
+      </div>
+      <div>
+        <label>Date of Birth:</label>
+        <input type="text" name="dob" />
+      </div>
+      <div>
+        <label>Student Class:</label>
+        <input type="radio"  name="stuclass" value="A">A
+        <input type="radio"  name="stuclass" value="B">B
+        <input type="radio"  name="stuclass" value="C">C
+      </div>
+      <div>
+        <label>MathsMark:</label>
+        <input type="number" name="maths"  />
+        <label>EnglishMark:</label>
+        <input type="number" name="english"  />
+        <label>ScienceMark:</label>
+        <input type="number" name="science" />
+        <label>SocialMark:</label>
+        <input type="number" name="social" />
+        <label>TamilMark:</label>
+        <input type="number" name="tamil" />
+      </div>
+      <div>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </body>
+</html>
