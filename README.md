@@ -9,21 +9,21 @@ Functionality-the core functions the application perform:
 3.  *Search for a Student:* Based on the name of the student, their record will be found
 4.  *Update a Student's Record:*Using students_id we can update their details
 5.  *Delete a Student:*Students record will be deleted from the database
-   Student's Record Format: Each student's record  includes:
-1. Full Name.
-2. Age.
-3. Date of Birth.
-4. Class.
-5. Subjects List.
-6. Marks in each subject.
-7. Percentage and Grade of Student (A+: 90+, A: 90-80, B: 80-70, C:
+   6.Student's Record Format: Each student's record  includes:
+	1. Full Name.
+	2. Age.
+	3. Date of Birth.
+	4. Class.
+	5. Subjects List.
+	6. Marks in each subject.
+	7. Percentage and Grade of Student (A+: 90+, A: 90-80, B: 80-70, C:
 70-60, D: 60-50, F: 50 below).
-   Bonus/ Optional Tasks:
-1. Get Average Percentage of a Class: Implement a feature to calculate and display
+7.Bonus/ Optional Tasks:
+	1. Get Average Percentage of a Class: Implement a feature to calculate and display
 the average percentage of students in a specified class.
-2. Calculate Average Marks of a Student: Implement a feature to calculate and
+	2. Calculate Average Marks of a Student: Implement a feature to calculate and
 display the average marks of a specific student.
-15.PROCEDURE:
+8.PROCEDURE:
 	1. An empty page will be displayed with add student link
  	2. To add student detail create a new record
   	3. All the students will be displayed
