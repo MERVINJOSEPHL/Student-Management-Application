@@ -17,7 +17,7 @@ Functionality-the core functions the application perform:
 	5. Subjects List.
 	6. Marks in each subject.
 	7. Percentage and Grade of Student (A+: 90+, A: 90-80, B: 80-70, C:70-60, D: 60-50, F: 50 below).
-7.Bonus/ Optional Tasks:
+ 7. Bonus/ Optional Tasks:
 	1. Get Average Percentage of a Class: Implement a feature to calculate and display
 the average percentage of students in a specified class.
 	2. Calculate Average Marks of a Student: Implement a feature to calculate and
