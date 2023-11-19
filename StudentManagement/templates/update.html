@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Modify Student</title>
+    <style>
+      /* Basic CSS styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: cyan;
+      }
+
+      form {
+        width: 60%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      div {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: inline-block;
+        width: 120px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="submit"] {
+        width: 200px;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        font-size: 14px;
+        margin-top: 4px;
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      /* Styling for disabled input */
+      input[disabled] {
+        background-color: #f2f2f2;
+        color: #666;
+      }
+
+    </style>
+</head>
+  <body>
+    <form action="/student/{{student['student_id']}}/update" method="POST" id="create-form">
+      <div>
+        <label>student id:</label>
+        <input type="text" name="sid" value="{{student['student_id']}}"  disabled />
+      </div>
+      <div>
+        <label>Name:</label>
+        <input type="text" name="name" required />
+      </div>
+      <div>
+        <label>Age:</label>
+        <input type="text" name="age" />
+      </div>
+      <div>
+        <label>Date of Birth:</label>
+        <input type="text" name="dob" />
+      </div>
+      <div>
+        <label>Student Class:</label>
+        <input type="radio"  name="stuclass" value="A">A
+        <input type="radio"  name="stuclass" value="B">B
+        <input type="radio"  name="stuclass" value="C">C
+      </div>
+      <div>
+        <label>MathsMark:</label>
+        <input type="number" name="maths"  /><br>
+        <label>EnglishMark:</label>
+        <input type="number" name="english"  /><br>
+        <label>ScienceMark:</label>
+        <input type="number" name="science" /><br>
+        <label>SocialMark:</label>
+        <input type="number" name="social" /><br>
+        <label>TamilMark:</label>
+        <input type="number" name="tamil" /><br>
+      </div>
+      <div>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </body>
+</html>

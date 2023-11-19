@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color:cyan;
+        margin-left:10px;
+        }
+      .top{
+      background-color: black;
+        margin-left:-10px;
+        margin-top:-25px;
+        padding:10px;
+      }
+
+        h1 {
+          text-align: center;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        ul li {
+          display: inline;
+          margin-right: 10px;
+        }
+
+        a {
+          text-decoration: none;
+          color: #007bff;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+        }
+
+        th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+        }
+
+        th {
+          background-color: #f2f2f2;
+        }
+
+        td a {
+          margin-right: 5px;
+        }
+
+        input[type="text"],
+        input[type="submit"] {
+          padding: 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          font-size: 14px;
+        }
+      .fi{
+        color:yellow;
+      }
+      </style>
+    </style>
+</head>
+  <body>
+    <div class="top">
+      <ul>
+        <h1 class="fi">Student Management</h1>
+        <ol>
+          <a href="/">All
+          </a>
+        </ol>
+        <ol>
+          <a href="/classa/filter">A class
+          </a>
+        </ol>
+        <ol>
+          <a href="/classb/filter">B class
+            </a>
+        </ol>
+        <ol>
+          <a href="/classc/filter">C class
+            </a>
+        </ol>
+      </ul>
+    </div>
+    <div>
+      Search:
+      <form action="/student/search" method="GET">
+      <input type="text" name="search">
+      <input type="submit" value="search" >
+      </form>
+      </div>
+    <h1>Student List</h1>
+    {% if avg %}
+    average
+    {{avg}}
+    {% endif %}
+    <table>
+      <tr>
+        <th>Student ID</th>
+        <th>Full Name</th>
+        <th>Grade</th>
+        <th>Class</th>
+        <th>Actions<th>
+      </tr>
+      {% if astudent|length !=0 %}
+      {% for i in astudent %}
+      <tr>
+        <td><a href="/student/{{ i['student_id'] }}">{{ i["student_id"] }}</a></td>
+        <td>
+          {{ i["full_name"] }}
+        </td>
+        <td>{{ i["grade"] }}</td>
+        <td>{{i["stuclass"]}}</td>
+        <td>
+          <a href="/student/{{ i['student_id'] }}/update">Update</a>
+          <a href="/student/{{ i['student_id'] }}/delete">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% endif %}
+      {% if bstudent|length !=0 %}
+      {% for i in bstudent %}
+      <tr>
+        <td><a href="/student/{{ i['student_id'] }}">{{ i["student_id"] }}</a></td>
+        <td>
+          {{ i["full_name"] }}
+        </td>
+        <td>{{ i["grade"] }}</td>
+        <td>{{i["stuclass"]}}</td>
+        <td>
+          <a href="/student/{{ i['student_id'] }}/update">Update</a>
+          <a href="/student/{{ i['student_id'] }}/delete">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% endif %}
+      {% if cstudent|length !=0 %}
+      {% for i in cstudent %}
+      <tr>
+        <td><a href="/student/{{ i['student_id'] }}">{{ i["student_id"] }}</a></td>
+        <td>
+          {{ i["full_name"] }}
+        </td>
+        <td>{{ i["grade"] }}</td>
+        <td>{{i["stuclass"]}}</td>
+        <td>
+          <a href="/student/{{ i['student_id'] }}/update">Update</a>
+          <a href="/student/{{ i['student_id'] }}/delete">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% endif %}
+    </table>
+    <pre>    <a href="/form">+ Add Student</a></pre>
+  </body>
+</html>

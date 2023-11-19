@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <style>
+      /* Internal CSS styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: cyan;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      h1 {
+        margin-top: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+      }
+
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      .go-back {
+        display: block;
+        margin-top: 20px;
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .student {
+        text-decoration: none;
+        
+      }
+
+      .student h1 {
+        margin-top: 20px;
+      }
+      .top{
+        background-color:black;
+        margin-top:-25px;
+        margin-left:-10px;
+        margin-right:-10px;
+        padding:5px;
+      }
+    </style>
+  </head>
+  <body>
+      <center class="top"><a href="/student/{{ mark['student_id'] }}" class="student"><h1>Student Details</h1></a>
+        <h1 style="color: #007bff;">Marks</h1></center>
+      <table id="mark-details">
+        <tr>
+          <th>Student_Id</th>
+          <th>Maths</th>
+          <th>Science</th>
+          <th>Social</th>
+          <th>English</th>
+          <th>Tamil</th>
+        </tr>
+        <tr>
+          <td>{{ mark["student_id"] }}</td>
+          <td>{{ mark["maths"] }}</td>
+          <td>{{ mark["science"] }}</td>
+          <td>{{ mark["social"] }}</td>
+          <td>{{ mark["english"] }}</td>
+          <td>{{ mark["tamil"] }}</td>
+        </tr>
+      </table>
+      <a href="/" class="go-back">Go Back</a>
+    </body>
+  </html>

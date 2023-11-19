@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <style>
+    th{
+    background-color: #f2f2f2;
+    }
+    </style>
+    
+</head>
+<body style="font-family: Arial, sans-serif; background-color: cyan; text-align: center;">
+<div style="background-color: black;margin-left:-10px;margin-top:-25px;padding:10px;margin-right:-10px;">
+<h1 style="margin-top: 20px;color: #007bff;">Student Details</h1>
+<a href="/mark/{{ student['student_id'] }}" class="mark" style="text-decoration: none; "><h1 style="margin-top: 20px;color: #007bff;">Marks</h1></a></div>
+
+<table id="personal-details" style="width: 80%; margin: 20px auto; border-collapse: collapse;">
+  <tr style="background-color:">
+    <th style="border: 1px solid #ddd; padding: 8px;">Student_Id</th>
+    <th style="border: 1px solid #ddd; padding: 8px;">Full Name</th>
+    <th style="border: 1px solid #ddd; padding: 8px;">Age</th>
+    <th style="border: 1px solid #ddd; padding: 8px;">DateOfBirth</th>
+    <th style="border: 1px solid #ddd; padding: 8px;">Class</th>
+    <th style="border: 1px solid #ddd; padding: 8px;">percentage</th>
+    <th style="border: 1px solid #ddd; padding: 8px;">grade</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">{{ student["student_id"] }}</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">{{ student["full_name"] }}</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">{{ student["age"] }}</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">{{ student["dateofbirth"] }}</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">{{ student["stuclass"] }}</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">{{ student["percentage"] }}</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">{{ student["grade"] }}</td>
+  </tr>
+</table>
+
+<a href="/" class="go-back" style="text-decoration: none; display: block; margin-top: 20px; color: #007bff;">Go Back</a>
+</body>
+</html>
