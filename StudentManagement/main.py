@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,redirect
 from flask_sqlalchemy import SQLAlchemy
 current_dir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
@@ -101,7 +101,8 @@ def delete(student_id):
   astudent = Student.query.filter_by(stuclass="A").all()
   bstudent = Student.query.filter_by(stuclass="B").all()
   cstudent = Student.query.filter_by(stuclass="C").all()
-  return render_template("home.html",astudent=astudent,bstudent=bstudent,cstudent=cstudent)
+  #return render_template("home.html",astudent=astudent,bstudent=bstudent,cstudent=cstudent)
+  return redirect("/")
 #update details
 @app.route("/student/<int:student_id>/update",methods=["GET","POST"])
 def update(student_id):
@@ -133,33 +134,43 @@ def update(student_id):
 @app.route("/classa/filter",methods=["GET","POST"])
 def filtera():
   astudent = Student.query.filter_by(stuclass="A").all()
+  
   total=0
   count=0
-  for i in astudent:
-    total+=i.percentage
-    count+=1
-  avg=total/count
-  return render_template("home.html",astudent=astudent,avg=avg)
+  if len(astudent)!=0:
+   for i in astudent:
+     total+=i.percentage
+     count+=1
+   avg=total/count
+   return render_template("home.html",astudent=astudent,avg=avg)
+  else:
+    return redirect("/")
 @app.route("/classb/filter",methods=["GET","POST"])
 def filterb():
   bstudent = Student.query.filter_by(stuclass="B").all()
-  total=0
-  count=0
-  for i in bstudent:
-    total+=i.percentage
-    count+=1
-  avg=total/count
-  return render_template("home.html",bstudent=bstudent,avg=avg)
+  if len(bstudent)!=0:
+   total=0
+   count=0
+   for i in bstudent:
+     total+=i.percentage
+     count+=1
+   avg=total/count
+   return render_template("home.html",bstudent=bstudent,avg=avg)
+  else:
+    return redirect("/")
 @app.route("/classc/filter",methods=["GET","POST"])
 def filterc():
   cstudent = Student.query.filter_by(stuclass="C").all()
-  total=0
-  count=0
-  for i in cstudent:
+  if len(cstudent)!=0:
+   total=0
+   count=0
+   for i in cstudent:
     total+=i.percentage
     count+=1
-  avg=total/count
-  return render_template("home.html",cstudent=cstudent,avg=avg)
+   avg=total/count
+   return render_template("home.html",cstudent=cstudent,avg=avg)
+  else:
+    return redirect("/")
 @app.route("/student/search",methods=["GET"])
 def search():
   search=request.args.get("search")
@@ -177,3 +188,4 @@ def search():
     
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=81,debug=True)
+    
